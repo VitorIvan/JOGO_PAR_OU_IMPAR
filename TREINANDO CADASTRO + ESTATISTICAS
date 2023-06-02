@@ -1,0 +1,51 @@
+cont = 0
+menos_d20 = 0
+h = 0
+m = 0
+print('-'*30)
+palavra = 'CADASTRE UMA PESSOA'
+print(F'{palavra:^30}')
+print('-'*30)
+nome = input('Nome: ')
+idade = int(input('Idade: '))
+sexo = input('Sexo [M/F]: ').upper()
+if sexo == 'M':
+    h += 1
+elif sexo == 'F':
+    m += 1
+    if idade < 20:
+        menos_d20 += 1
+
+while sexo != 'M' and sexo != 'F':
+    sexo = input('Sexo [M/F]: ').upper()
+    if sexo == 'M':
+        h += 1
+    elif sexo == 'F':
+        m += 1
+print('-'*30)
+continuar = input('Deseja continuar? [S/N]: ')
+if idade >= 18:
+    cont+=1
+while continuar == 'S':
+    print('-' * 30)
+    palavra = 'CADASTRE UMA PESSOA'
+    print(F'{palavra:^30}')
+    print('-' * 30)
+    nome = input('Nome: ')
+    idade = int(input('Idade: '))
+    if idade >= 18:
+        cont += 1
+    sexo = input('Sexo [M/F]: ').upper()
+    if sexo == 'M':
+        h += 1
+    elif sexo == 'F':
+        m += 1
+        if idade < 20:
+            menos_d20 += 1
+    print('-' * 30)
+    continuar = input('Deseja continuar? [S/N]: ')
+print('===FIM DO PROGRAMA===')
+print('>>>ESTATÍSTICAS:')
+print(f'Total de pessoas maiores de idade: {cont}')
+print(f'Ao todo temos {h} homens cadastrados, e {m} mulheres cadastradas. ')
+print(f'E temos {menos_d20} mulheres com menos de 20 anos cadastradas!')
