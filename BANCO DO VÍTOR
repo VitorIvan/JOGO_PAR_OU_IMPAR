@@ -1,0 +1,38 @@
+def troco(x):
+    while x > 0:
+        cedula50 = x // 50
+        x %= 50
+        cedula20 = x // 20
+        x %= 20
+        cedula10 = x // 10
+        x %= 10
+        cedula5 = x // 5
+        x %= 5
+        cedula1 = x
+
+        if cedula50 > 0:
+            print(f'{cedula50} notas de 50 reais')
+        if cedula20 > 0:
+            print(f'{cedula20} notas de 20 reais')
+        if cedula10 > 0:
+            print(f'{cedula10} notas de 10 reais')
+        if cedula5 > 0:
+            print(f'{cedula5} notas de 5 reais')
+        if cedula1 > 0:
+            print(f'{cedula1} notas de 1 real')
+
+        if x == 0:
+            break
+
+nome = 'BANCO DO VÍTOR'
+print('☰' * 16)
+print(f'    {nome:^16}')
+print('☰' * 16)
+
+while True:
+    valor = int(input('Que valor você deseja sacar? R$ '))
+    troco(valor)
+    print('☰' * 16)
+    print('Obrigado pela preferência!!!')
+    print('☰' * 16)
+    break
