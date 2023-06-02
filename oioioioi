@@ -1,0 +1,53 @@
+from random import randint
+print('~'*25)
+print(f'VAMOS JOGAR PAR OU IMPAR')
+print('~'*25)
+numero_usuario = int(input('Digite um valor: '))
+par_impar= input('Par ou Impar? [P/I]').upper().strip()
+numero_computador = randint(0,11)
+soma = (numero_usuario + numero_computador)
+recorde = 0
+
+
+while True:
+    if numero_usuario >10:
+        print('-' * 25)
+        print(f'Número Inválido! afinal você não tem {numero_usuario} dedos nas mãos!!!')
+        print('-' * 25)
+        numero_usuario = int(input('Digite um valor: '))
+        par_impar = input('Par ou Impar? [P/I]')
+        continue
+    numero_computador = randint(0, 11)
+    soma = (numero_usuario + numero_computador)
+    recorde += 1
+    if soma %2 == 0:
+        print('-'*25)
+        print(f'Você jogou {numero_usuario}, e o computador jogou {numero_computador}. Total de {soma}, deu PAR!')
+        print('-' * 25)
+        if par_impar == 'P':
+            print('Você venceu! YOU WIN!')
+            print('Vamos jogar novamente...')
+            numero_usuario = int(input('Digite um valor: '))
+            par_impar = input('Par ou Impar? [P/I]')
+        else:
+            print('HAHAHA! Você perdeu, GAME OVER.')
+            print(f'Sua pontuação foi: {recorde} tentativas!')
+            break
+    else:
+        print('-'*25)
+        print(f'Você jogou {numero_usuario}, e o computador jogou {numero_computador}. Total de {soma}, deu IMPAR!')
+        print('-' * 25)
+        if par_impar == 'I':
+            print('Você venceu! YOU WIN!')
+            print('Vamos jogar novamente...')
+            numero_usuario = int(input('Digite um valor: '))
+            par_impar = input('Par ou Impar? [P/I]')
+        else:
+            print('HAHAHA! Você perdeu, GAME OVER.')
+            print(f'Sua pontuação foi: {recorde} tentativas!')
+            break
+
+
+
+5
+
